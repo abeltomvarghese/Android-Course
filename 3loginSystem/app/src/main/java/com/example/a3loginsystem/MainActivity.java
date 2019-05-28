@@ -13,9 +13,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    public void clickFunction (View view) {
+    public void login (View view) {
         EditText userName = (EditText) findViewById(R.id.userName);
-        EditText passWord = (EditText) findViewById(R.id.password);
+        EditText passWord = (EditText) findViewById(R.id.passwordEditText);
         Log.i("Username", userName.getText().toString());
         Log.i("Password", passWord.getText().toString());
 
