@@ -19,6 +19,6 @@ public class MainActivity extends AppCompatActivity {
         EditText passWord = (EditText) findViewById(R.id.passwordEditText);
         Log.i("Username", userName.getText().toString());
         Log.i("Password", passWord.getText().toString());
-        Toast.makeText(this, "hello " + userName.getText(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "hello " + userName.getText().toString(), Toast.LENGTH_SHORT).show();
     }
 }
