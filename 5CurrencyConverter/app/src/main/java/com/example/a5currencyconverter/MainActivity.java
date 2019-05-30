@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         double num = Double.parseDouble(stringNum);
         double result = num * 1.26;
         String finalResult = String.format("%.2f",result);
-        Toast.makeText(this, "$" + finalResult, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "£" + stringNum +" is $" + finalResult, Toast.LENGTH_SHORT).show();
 
     }
 }
