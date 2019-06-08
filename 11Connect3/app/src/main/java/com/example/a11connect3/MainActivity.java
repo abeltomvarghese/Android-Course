@@ -38,6 +38,18 @@ public class MainActivity extends AppCompatActivity {
             Button playAgain = (Button) findViewById(R.id.btnPlay);
             TextView message = (TextView) findViewById(R.id.tvWinner);
             counter.animate().translationYBy(1500).rotation(3600).setDuration(400);
+            int drawnCounter = 0;
+            for (int index = 0; index < gameState.length; index++) {
+                if (gameState[index] != 2) {
+                    drawnCounter++;
+                }
+            }
+            if (drawnCounter == 9) {
+                drawn = true;
+                message.setText("DRAW!");
+                playAgain.setVisibility(View.VISIBLE);
+                message.setVisibility(View.VISIBLE);
+            }
             for (int[] position : winningPositions) {
                 if (gameState[position[0]] == gameState[position[1]] && gameState[position[1]] == gameState[position[2]] && gameState[position[0]] != 2) {
                     hasWon = true;
@@ -54,18 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             }
-            int drawnCounter = 0;
-            for (int index = 0; index < gameState.length; index++) {
-                if (gameState[index] != 2) {
-                    drawnCounter++;
-                }
-            }
-            if (drawnCounter == 9) {
-                drawn = true;
-                message.setText("DRAW!");
-                playAgain.setVisibility(View.VISIBLE);
-                message.setVisibility(View.VISIBLE);
-            }
+
         }
     }
     public void playAgain(View view) {
